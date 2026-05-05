@@ -13,6 +13,10 @@
   font-family:Arial, sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#02140f;
   color:white;
@@ -25,6 +29,9 @@ nav{
   align-items:center;
   padding:20px 50px;
   background:#012d23;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 nav h2{
@@ -37,11 +44,13 @@ nav ul{
   gap:20px;
 }
 
-nav ul li{
-  cursor:pointer;
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
 }
 
-nav ul li:hover{
+nav ul li a:hover{
   color:#00ff99;
 }
 
@@ -118,6 +127,11 @@ h2{
   background:#01352a;
   padding:15px 25px;
   border-radius:8px;
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:scale(1.1);
 }
 
 /* PROJECTS */
@@ -178,6 +192,18 @@ footer{
   opacity:1;
   transform:translateY(0);
 }
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+}
 </style>
 
 </head>
@@ -187,11 +213,11 @@ footer{
 <nav>
   <h2>Emmanuel</h2>
   <ul>
-    <li onclick="scrollToSection('home')">Home</li>
-    <li onclick="scrollToSection('about')">About</li>
-    <li onclick="scrollToSection('skills')">Skills</li>
-    <li onclick="scrollToSection('projects')">Projects</li>
-    <li onclick="scrollToSection('contact')">Contact</li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -201,11 +227,13 @@ footer{
   <div class="hero-text">
     <h1>Hello, I'm <span>Owolabi Emmanuel</span></h1>
     <p>Web Designer • Web Developer • Content Creator</p>
-    <button onclick="scrollToSection('contact')">Hire Me</button>
+
+    <a href="https://wa.me/2349070938624" target="_blank">
+      <button>Hire Me</button>
+    </a>
   </div>
 
   <div class="hero-img">
-    <!-- 🔥 PUT YOUR IMAGE HERE -->
     <img src="ceo.jpeg" alt="CEO Picture">
   </div>
 
@@ -270,11 +298,6 @@ footer{
 </footer>
 
 <script>
-// Smooth scroll
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
 // Scroll animation
 const fades = document.querySelectorAll('.fade');
 

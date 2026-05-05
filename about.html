@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owolabi Emmanuel | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#02140f;
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:#012d23;
+  position:sticky;
+  top:0;
+}
+
+nav h2{
+  color:#00ff99;
+}
+
+/* NAV LINKS */
+#nav-links{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+
+#nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+
+#nav-links a:hover{
+  color:#00ff99;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:#00ff99;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:60px 20px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  max-width:500px;
+}
+
+.hero h1{
+  font-size:2.8rem;
+}
+
+.hero span{
+  color:#00ff99;
+}
+
+.hero-img img{
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid #00ff99;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 50px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#00ff99;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.skill{
+  background:#01352a;
+  padding:15px 25px;
+  border-radius:8px;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.project{
+  background:#01352a;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.contact input,
+.contact textarea{
+  width:80%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  nav{
+    padding:20px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  #nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#012d23;
+    width:200px;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+  }
+
+  #nav-links.show{
+    display:flex;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .hero-img img{
+    width:180px;
+    height:180px;
+    margin-top:20px;
+  }
+
+  section{
+    padding:40px 20px;
+  }
+
+  .contact input,
+  .contact textarea{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Emmanuel</h2>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Hello, I'm <span>Owolabi Emmanuel</span></h1>
+    <p>Web Designer • Developer • Content Creator</p>
+  </div>
+
+  <div class="hero-img">
+    <img src="ceo.jpeg" alt="CEO">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    I build modern, responsive websites and help brands grow online.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">Business Website</div>
+    <div class="project">Portfolio</div>
+    <div class="project">Event App</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <input type="text" placeholder="Name"><br>
+  <input type="email" placeholder="Email"><br>
+  <textarea placeholder="Message"></textarea>
+</section>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav-links").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
